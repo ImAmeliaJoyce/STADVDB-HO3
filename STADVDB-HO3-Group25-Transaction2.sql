@@ -18,7 +18,7 @@ SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 
 START TRANSACTION;
 	SELECT *
-    FROM accounts
+    FROM datawarehouseho3.accounts
     WHERE id = 5;
 COMMIT;
 
@@ -32,13 +32,13 @@ SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 
 START TRANSACTION;
 	SELECT amount 
-    FROM accounts
+    FROM datawarehouseho3.accounts
     WHERE id = 5;
     
     DO SLEEP(10);
     
     SELECT amount 
-    FROM accounts
+    FROM datawarehouseho3.accounts
     WHERE id = 5;
 COMMIT;
 
@@ -52,13 +52,13 @@ SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 
 START TRANSACTION;
 	SELECT *
-    FROM accounts
+    FROM datawarehouseho3.accounts
     WHERE id BETWEEN 1 and 10;
     
     DO SLEEP(10);
     
 	SELECT *
-    FROM accounts
+    FROM datawarehouseho3.accounts
     WHERE id BETWEEN 1 and 10;
 COMMIT;
 

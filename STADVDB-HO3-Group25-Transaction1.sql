@@ -15,7 +15,7 @@ INSERT INTO datawarehouseho3.accounts (amount) VALUES(500000);
 -- FLOW: Execute this, while DO SLEEP(10) is running, execute
 -- corresponding query in Transaction 2
 START TRANSACTION;
-	UPDATE accounts 
+	UPDATE datawarehouseho3.accounts 
     SET amount = 2 * amount
     WHERE id = 5;
 	DO SLEEP(10);
@@ -24,7 +24,7 @@ COMMIT;
 -- Scenario 2 (Non-repeatable Read)
 -- FLOW: Execute this, while DO SLEEP(10) in Transaction 2 is running
 START TRANSACTION;
-	UPDATE accounts 
+	UPDATE datawarehouseho3.accounts 
     SET amount = 2 * amount
     WHERE id = 5;
 COMMIT;
@@ -33,9 +33,9 @@ COMMIT;
 -- FLOW: Execute this, while DO SLEEP(10) is running, execute
 -- corresponding query in Transaction 2
 START TRANSACTION;
-	INSERT INTO accounts values(6, 1500);
-    INSERT INTO accounts values(7, 20000);
-    INSERT INTO accounts values(8, 300);
-    INSERT INTO accounts values(9, 1250);
+	INSERT INTO datawarehouseho3.accounts (amount) VALUES(600000);
+    INSERT INTO datawarehouseho3.accounts (amount) VALUES(70000);
+    INSERT INTO datawarehouseho3.accounts (amount) VALUES(8000);
+    INSERT INTO datawarehouseho3.accounts (amount) VALUES(900);
 COMMIT;
     
