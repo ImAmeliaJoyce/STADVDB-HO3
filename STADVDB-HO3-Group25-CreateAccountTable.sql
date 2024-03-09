@@ -9,3 +9,6 @@ CREATE TABLE `datawarehouseho3`.`accounts` (
 	id INT AUTO_INCREMENT PRIMARY KEY,
     amount INT
 );
+
+-- Check the values in the accounts table
+SELECT * FROM datawarehouseho3.accounts;
