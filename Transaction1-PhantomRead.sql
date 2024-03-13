@@ -16,6 +16,8 @@ SET TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
 START TRANSACTION;
 	INSERT INTO datawarehouseho3.accounts (amount) VALUES(600000.00);
     INSERT INTO datawarehouseho3.accounts (amount) VALUES(70000.00);
+    INSERT INTO datawarehouseho3.accounts (amount) VALUES(8000.00);
+    INSERT INTO datawarehouseho3.accounts (amount) VALUES(900.00);
     DELETE FROM datawarehouseho3.accounts WHERE id=1;
     DELETE FROM datawarehouseho3.accounts WHERE id=4;
 COMMIT;
