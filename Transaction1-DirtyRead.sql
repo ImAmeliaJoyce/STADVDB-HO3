@@ -19,4 +19,4 @@ START TRANSACTION;
     SET amount = (0.04 * amount) + amount
     WHERE id = 5;
 	DO SLEEP(10);
-COMMIT;
+ROLLBACK;
